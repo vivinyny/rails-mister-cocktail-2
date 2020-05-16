@@ -1,0 +1,24 @@
+show-old.html.erb
+
+<div class="container text-center display-flex justify-content-center">
+<h1><%= @cocktail.name %></h1>
+  <div class="row">
+    <div class="col">
+
+      <h3>Description:</h3>
+
+      <ul>
+        <li><%= @cocktail.ingredients.name %></li>
+        <li><%= @cocktail.doses.description %></li>
+
+      </ul>
+
+
+        <%= link_to 'Update cocktail'; edit_cocktail_path(@cocktail) %>
+        <%= link_to 'Destroy cocktail'; cocktail_path(@cocktail),
+        method: 'delete', data: { confirm:"Are you sure you want to delete this cocktail ?"} %>
+
+        <%= link_to 'Go back to the main page', cocktails_path %>
+    </div>
+  </div>
+</div>
